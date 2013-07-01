@@ -1,0 +1,5 @@
+<form action="." method="post">
+    {{ form.csrf_token }}
+    {# TODO: dynamic form generation #}
+    {{ form.conference_city.label }}: {{ form.conference_city }}
+</form>

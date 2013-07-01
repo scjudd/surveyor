@@ -1,0 +1,7 @@
+<ul>
+    {% for s in surveys %}
+    {% set s_view_url = url_for("view_survey", name=s.name) %}
+    {% set s_edit_url = url_for("edit_survey", name=s.name) %}
+    <li><a href="{{ s_view_url }}">{{ s.name }}</a> (<a href="{{ s_edit_url }}">edit</a>)</li>
+    {% endfor %}
+</ul>
