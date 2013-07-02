@@ -22,8 +22,9 @@ def edit_survey():
 
 @app.route("/s/<path:name>")
 def view_survey(name):
-    if get_survey(name):
-        form = DynamicSurveyForm(name)
+    survey = get_survey(name)
+    if survey:
+        form = DynamicSurveyForm(survey)
         return render_template("view.html", form=form)
 
     return redirect(url_for("new_survey", name=name))
